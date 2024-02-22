@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'style/woman.css' %}">
+    <style>
+        span{
+         color: red;
+         font-size:x-large ;
+        }
+     i{
+       text-decoration: line-through;
+      }
+      #row1 button{
+      background-color: #fff;
+      border: none;
+      font-size: large;
+      font-style: italic;
+      font-weight:700;
+      }
+      button a{
+        text-decoration: none;
+        color: black;
+      }
+      table {
+       margin-top: 40px;
+     }
+     button a:hover{
+     background-color: red;
+     color: white;
+     border-radius: 3px;
+     border: none;
+    }
+    button:hover{
+    transform: scale(1.2) translate(5px);
+    transition: .4s
+    }
+    .butn:hover{
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    }
+    #table1 th{
+        width: 150px;
+    }
+    b{
+        color: rgb(91, 167, 16);
+        font-style: italic;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row" id="row1">
+            <div class="col-4">
+                <img src="{% static 'images/fashionous_logo.jpg' %}" alt="" style="width: 300px;">
+            </div>
+            <div class="col-8">
+                <table id="table1">
+                    <tr>
+                        
+                        <th><button><a href="{% url 'customer:home' %}">HOME</a></button></th>
+                        <th><div class="dropdown">
+                            <a style=" text-decoration: none; padding: 4px; color: black;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              SHOPE
+                            </a>
+                          
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{% url 'customer:men' %}">Men</a></li>
+                              <li><a class="dropdown-item" href="{% url 'customer:woman' %}">Woman</a></li>
+                            </ul>
+                          </div></th>
+                        <th><button><a href="{% url 'customer:contact' %}">CONTACT</a></button></th>
+                        <th><button><a href="{% url 'customer:about' %}">ABOUT</a></button></th>
+                        <th><button><a href="{% url 'customer:login' %}">LOGIN</a></button></th>
+                    </tr>
+                </table>
+                  </table>
+            </div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img1" onmouseover="newimg1()" onmouseout="oldimg1()" src="{% static 'images/woman-a1.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Acne Studio coat</h5>
+                      <p class="card-text"><i>599/-</i><span>Rs 399/-</span><br><b>20% offer</b></p>
+                      <a href="#" class="btn btn-primary">add cart</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img2" onmouseover="newimg2()" onmouseout="oldimg2()" src="{% static 'images/woman2.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Luxury Fashion</h5>
+                      <p class="card-text"><i>649/-</i><span>Rs 549/-</span><br><b>10% offer</b></p>
+                      <a href="#" class="btn btn-primary">add cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img3" onmouseover="newimg3()" onmouseout="oldimg3()" src="{% static 'images/woman3.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Fashion Landscape</h5>
+                      <p class="card-text"><i>444/-</i><span>Rs 333/-</span><br><b>10% offer</b></p>
+                      <a href="#" class="btn btn-primary">add cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="row3">
+            <div class="col-3">
+                <img src="{%  static 'images/woman7.jpg' %}" alt="" height="200px" width="200px">
+            </div>
+            <div class="col-3">
+                
+                <img src="{% static 'images/woman8.jpg' %}" alt="" height="200px" width="200px">
+            </div>
+            <div class="col-3">
+                
+                <img src="{% static 'images/woman9.jpg' %}" alt="" height="200px" width="200px">
+            </div>
+            <div class="col-3">
+                
+                <img src="{% static 'images/woman10.jpg' %}" alt="" height="200px" width="200px">
+            </div>
+        </div>
+        <div class="row" id="row4">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img4" onmouseover="newimg4()" onmouseout="oldimg4()" src="{% static 'images/woman4.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Alex Perry fashion</h5>
+                      <p class="card-text"><i>849/-</i><span>Rs 749/-</span><br><b>15% offer</b></p>
+                      <a href="#" class="btn btn-primary">add cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img5" onmouseover="newimg5()" onmouseout="oldimg5()" src="{% static 'images/woman5.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Staud Fashion</h5>
+                      <p class="card-text"><i>999/-</i><span>Rs 899/-</span><br><b>20% offer</b></p>
+                      <a href="#" class="btn btn-primary">add cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img6" onmouseover="newimg6()" onmouseout="oldimg6()" src="{% static 'images/woman6.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Michael Kors</h5>
+                      <p class="card-text"><i>799/-</i><span>Rs 599/-</span><br><b>30% offer</b></p>
+                      <a href="#" class="btn btn-primary">add cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function newimg1(){
+            document.getElementById('img1').src="https://i.pinimg.com/236x/d4/75/4b/d4754bf53c20daac2e097aaaa04211a8.jpg"
+        }
+        function oldimg1(){
+            document.getElementById('img1').src="https://i.pinimg.com/564x/2b/bd/85/2bbd8521422b4ffcc3aeee315928e8ee.jpg"
+        }
+        function newimg2(){
+            document.getElementById('img2').src="https://i.pinimg.com/236x/f7/e1/bf/f7e1bf8df64b451f18e5a327dcfb8f19.jpg"
+        }
+        function oldimg2(){
+            document.getElementById('img2').src="https://i.pinimg.com/564x/e8/59/01/e85901c31eb272ea033715ba46a86d07.jpg"
+        }
+        function newimg3(){
+            document.getElementById('img3').src='https://i.pinimg.com/236x/9c/51/85/9c518594e1bbb19b4ab00cdb0160314d.jpg'
+        }
+        function oldimg3(){
+            document.getElementById('img3').src='https://i.pinimg.com/564x/40/f3/bd/40f3bd5887b23e7c80dd5ad088d5298d.jpg'
+        }
+        function newimg4(){
+            document.getElementById('img4').src="https://i.pinimg.com/236x/70/0f/9b/700f9bc13e3cfa08d53ec0b7aa0d187a.jpg"
+        }
+        function oldimg4(){
+            document.getElementById('img4').src='https://i.pinimg.com/564x/91/45/a1/9145a1aba224e4a26e835b4648bee29f.jpg'
+        }
+        function newimg5(){
+            document.getElementById('img5').src="https://i.pinimg.com/236x/ca/34/07/ca3407524902985cd2fd856dd81909d1.jpg"
+        }
+        function oldimg5(){
+            document.getElementById('img5').src="https://i.pinimg.com/564x/42/23/97/422397dbad21340a2bc0615ea9ba222a.jpg"
+        }
+        function newimg6(){
+            document.getElementById('img6').src="https://i.pinimg.com/564x/75/3e/9e/753e9e6b8938e4899fc5fe40acccb53a.jpg"
+        }
+        function oldimg6(){
+            document.getElementById('img6').src='https://i.pinimg.com/564x/10/3b/e1/103be147eec31932184869255d8d4fe6.jpg'
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

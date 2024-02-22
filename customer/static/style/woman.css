@@ -1,0 +1,20 @@
+#row1{
+  height: 120px;
+}
+#row3 {
+    margin-top: 30px;
+}
+#row4{
+    margin-top: 30px;
+}
+#able1 th{
+  width: 200px;
+}
+#row2 i{
+  text-decoration: line-through;
+}
+
+table th button{
+  background-color: #fff;
+}
+

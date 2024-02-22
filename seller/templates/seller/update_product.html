@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        #row1 table tr th{
+            width: 200px;
+        }
+        #row1 table{
+            margin-top: 40px;
+        }
+        #row1{
+            background-color: #33B0B0 ;
+        }
+        #row1 button{
+            background-color:#33B0B0 ;
+            border: none;
+            /* width: 160px; */
+        }
+        button a{
+            text-decoration:none;
+            color: black;
+            font-style: italic;
+            font-weight: 700;
+        }
+        #row1 table button a:hover{
+            background-color: black;
+            color: white;
+            border-radius: 3px;
+        }
+        input{
+            font-style: italic;
+            width: 200px;
+        }
+        label{
+            font-style: italic;
+        }
+        select{
+            font-style: italic;
+            font-weight: 600;
+        }
+         option{
+            font-style: italic;
+        }
+        h2{
+            font-style: italic;
+            color:brown;
+        }
+        span{
+            color: red;
+        }
+        #row2 table th  button{
+            background-color: red;
+            border-radius: 3px;
+            color: white;
+            font-weight: 600;
+            font-style: italic;
+        }
+        #row2 button:hover{
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="row1">
+            <div class="col-3">
+                <img src="{% static 'images/fashionous_logo.jpg' %}" alt="" style="width: 250px; mix-blend-mode: darken;">
+            </div>
+            <div class="col-9">
+                <form action="" method="post">
+                    <table id="tabble1">
+                        <tr>
+                            <th><button style="margin-left: 70px;"><a href="{% url 'seller:s_home' %}">HOME</a></button></th>
+                            <th><button><a href="{% url 'seller:add_product' %}">ADD PRODUCT</a></button></th>
+                            <th><button><a href="{% url 'seller:view_product' %}">VIEW PRODUCT</a></button></th>
+                            <!-- <th><button><a href="{% url 'seller:update_product' %}">UPDATE PRODUCT</a></button></th> -->
+                            <th><button style="margin-left: 20px;"><a href="{% url 'seller:s_login' %}">LOGIN</a></button></th>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form action="" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <th><h2>𝑼𝒑𝒅𝒂𝒕𝒆 𝑷𝒓𝒐𝒅𝒖𝒄𝒕</h2></th>
+                        </tr>
+                        <tr>
+                            <th><label for=""> Product Name<span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <th><input type="text" name="name" value="{{product.name}}" placeholder="product"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="">Description <span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <th><input type="text" name="description" value="{{product.description}}" placeholder="description"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="">Quantity <span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <th><input type="number" name='quantity' value="{{product.quantity}}" placeholder="Quantity"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="">Price <span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <th><input type="float" name="price" value="{{product.price}}" placeholder="price"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="">Add image <span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <th><input type="file" value="{{product.image.url}}" name="image"></th>
+                        </tr>
+                        <tr>
+                            <th><label for="">Select category <span>*</span></label></th>
+                        </tr>
+                        <tr>
+                            <th><select name="cat" id="">
+                                {% for i in cat %}
+                                <option value="{{i.id}}">{{i.name}}</option>
+                                {% endfor %}
+                            </select></th>
+                        </tr>
+                        <tr><th><button type="submit">Update</button></th></tr>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

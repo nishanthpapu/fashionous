@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/men.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+      span{
+            color: red;
+            font-size:x-large ;
+
+
+        }
+        i{
+            text-decoration: line-through;
+        }
+        button{
+          font-style: italic;
+      
+        }
+        .butn:hover{
+          background-color: red;
+          color: white;
+          border-radius: 5px;
+        }
+        b{
+          color: rgb(77, 145, 10);
+          font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="row" id="row1">
+        <div class="col-4">
+        <img src="{% static 'images/fashionous_logo.jpg' %}" alt="">
+        </div>
+          <div class="col-8">
+            <table id="table1">
+              <tr>
+                  
+                  <th><button><a href="{% url 'customer:home' %}">HOME</a></button></th>
+                  <th><div class="dropdown">
+                    <a style=" text-decoration: none; padding: 4px;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      SHOPE
+                    </a>
+                  
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'customer:men' %}">Men</a></li>
+                      <li><a class="dropdown-item" href="{% url 'customer:woman' %}">Woman</a></li>
+                    </ul>
+                  </div></th>
+                  <th><button><a href="{% url 'customer:contact' %}">CONTACT</a></button></th>
+                  <th><button><a href="{% url 'customer:about' %}">ABOUT</a></button></th>
+                  <th><button><a href="{% url 'customer:login' %}">LOGIN</a></button></th>
+              </tr>
+          </table>
+            </table>
+            
+        </div>
+      </div>
+        <div class="row" id="row2">
+            <div class="col-4">
+             <div class="card" style="width: 18rem;">
+                <img id="img1" onmouseover="newimg()" onmouseout="oldimg()" src="{% static 'images/men_a1.jpg' %}" class="card-img-top" alt="..." height="400px">
+                <div class="card-body">
+                  <h5 class="card-title">Bomber Jacket</h5>
+                  <p class="card-text"><i>1499/-</i><span>Rs 1299/-</span><br><b>20% offer</b></p>
+                  <a href="#" class="btn btn-primary">add cart</a>
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-4">
+              <div class="card" style="width: 18rem;">
+                <img id="img2" onmouseover="newimg1()" onmouseout="oldimg1()" src="{% static 'images/men_b1.jpg' %}" class="card-img-top" alt="..." height="400px">
+                <div class="card-body">
+                  <h5 class="card-title">Casual Shirt</h5>
+                  <p class="card-text"><i>999/-</i><span>Rs 799/-</span><br><b>30% offer</b></p>
+                  <a href="#" class="btn btn-primary">add cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-4"><div class="card" style="width: 18rem;">
+              <img id="img3" onmouseover="newimg2()" onmouseout="oldimg2()" src="{% static 'images/men_c1.jpg' %}" class="card-img-top" alt="..." height="400px">
+              <div class="card-body">
+                <h5 class="card-title">Fashion for Teen</h5>
+                <p class="card-text"><i>1199/-</i><span>Rs 899/-</span><br><b>30% offer</b></p>
+                <a href="#" class="btn btn-primary">add cart</a>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div class="row" id="row3" style="margin-top: 50px; " >
+        <div class="col-3">
+          <img src="{% static 'images/shirt1.jpg' %}" alt="" height="200px" width="200px">
+        </div>
+        <div class="col-3">
+          <img src="{% static 'images/shirt4.jpg' %}" alt="" height="200px" width="200px">
+        </div>
+        <div class="col-3">
+          <img src="{% static 'images/shirt3.jpg' %}" alt="" height="200px" width="200px">
+        </div>
+        <div class="col-3">
+          <img src="{% static 'images/shirt2.jpg' %}" alt="" height="200px" width="200px">
+        </div>
+        </div>
+        <div class="row" id="row4" style="margin-top: 50px;">
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <img id="img4" onmouseover="newimg3()" onmouseout="oldimg3()" src="{% static 'images/men_d1.jpg' %}" class="card-img-top" alt="..." height="400px">
+              <div class="card-body">
+                <h5 class="card-title">Coat for men</h5>
+                <p class="card-text"><i>1499/-</i><span>Rs 999/-</span><br><b>50% offer</b></p>
+                <a href="#" class="btn btn-primary">add cart</a>
+              </div>
+            </div>
+          </div>
+            <div class="col-4">
+              <div class="card" style="width: 18rem;">
+                <img id="img5" onmouseover="newimg4()" onmouseout="oldimg4()" src="{% static 'images/men_f1.jpg' %}" class="card-img-top" alt="..." height="400px">
+                <div class="card-body">
+                  <h5 class="card-title">Ecru denim jacket</h5>
+                  <p class="card-text"><i>1299/-</i><span>Rs 899/-</span><br><b>40% offer</b></p>
+                  <a href="#" class="btn btn-primary">add cart</a>
+                </div>
+              </div>
+          </div>
+          <div class="col-4">
+            <div class="card" style="width: 18rem;">
+              <img id="img6" onmouseover="newimg5()" onmouseout="oldimg5()" src="{% static 'images/men_g1.jpg' %}" class="card-img-top" alt="..." height="400px">
+              <div class="card-body">
+                <h5 class="card-title">Hoddies</h5>
+                <p class="card-text"><i>999/-</i><span>Rs 799/-</span><br><b>20% offer</b></p>
+                <a href="#" class="btn btn-primary">add cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script>
+      function newimg(){
+        document.getElementById('img1').src="https://i.pinimg.com/236x/78/d1/9f/78d19fa0089bd1c17e0d76966006a9c2.jpg"
+      }
+      function oldimg(){
+        document.getElementById('img1').src="https://i.pinimg.com/564x/1e/6a/d3/1e6ad3a90ec36f03b0a6ef36f3a1fba6.jpg"
+      }
+      function newimg1(){
+        document.getElementById('img2').src="https://i.pinimg.com/236x/47/ae/a7/47aea7d73ebd78f43daa1e65475f0d2d.jpg"
+      }
+      function oldimg1(){
+        document.getElementById('img2').src="https://i.pinimg.com/564x/42/d0/ac/42d0ace3d9e59ccc1f777a0802c72307.jpg"
+      }
+      function newimg2(){
+        document.getElementById('img3').src="https://i.pinimg.com/236x/ba/be/3a/babe3a5c55b57e5a9da17349a19a0130.jpg"
+      }
+      function oldimg2(){
+        document.getElementById('img3').src="https://i.pinimg.com/564x/70/17/3e/70173efb2fe4aad55c02f42062b11870.jpg"
+      }
+      function newimg3(){
+        document.getElementById('img4').src='https://i.pinimg.com/236x/cd/c4/0e/cdc40e49aaba3e7f276ca810e8010400.jpg'
+      }
+      function oldimg3(){
+        document.getElementById('img4').src="https://i.pinimg.com/564x/ea/bd/f7/eabdf7b6467f8f326db6a70fc67e3390.jpg"
+      }
+      function newimg4(){
+        document.getElementById('img5').src="https://i.pinimg.com/236x/1b/bc/00/1bbc007b788f489aaf5ea61f0de0ba13.jpg"
+      }
+      function oldimg4(){
+        document.getElementById('img5').src="https://i.pinimg.com/564x/97/a2/8e/97a28e8858b8eff09c15182f067027cd.jpg"
+      }
+      function newimg5(){
+        document.getElementById('img6').src="https://i.pinimg.com/236x/60/08/bd/6008bd140d69a66b3b808b9906158f56.jpg"
+      }
+      function oldimg5(){
+        document.getElementById('img6').src="https://i.pinimg.com/564x/2a/b9/8f/2ab98f19e5fafcc2a2fa7c6ba35a2151.jpg"
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
