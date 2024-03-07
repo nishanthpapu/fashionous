@@ -11,8 +11,6 @@
       span{
             color: red;
             font-size:x-large ;
-
-
         }
         i{
             text-decoration: line-through;
@@ -28,6 +26,17 @@
         }
         b{
           color: rgb(77, 145, 10);
+          font-style: italic;
+        }
+        #row1 button:hover{
+          background-color: red;
+          color: #fff;
+          transform: scale(1.1) translate(5px);
+          transition: .4s;
+          border-radius: 5px;
+        }
+        #row1 button a:hover{
+          color: white;
           font-style: italic;
         }
     </style>
@@ -62,39 +71,39 @@
             
         </div>
       </div>
-        <div class="row" id="row2">
-            <div class="col-4">
-             <div class="card" style="width: 18rem;">
-                <img id="img1" onmouseover="newimg()" onmouseout="oldimg()" src="{% static 'images/men_a1.jpg' %}" class="card-img-top" alt="..." height="400px">
-                <div class="card-body">
-                  <h5 class="card-title">Bomber Jacket</h5>
-                  <p class="card-text"><i>1499/-</i><span>Rs 1299/-</span><br><b>20% offer</b></p>
-                  <a href="#" class="btn btn-primary">add cart</a>
-                </div>
-              </div>
-             
+      <div class="row" id="row4" style="margin-top: 20px;">
+        <div class="col-4">
+          <div class="card" style="width: 19rem;">
+            <img id="img4" onmouseover="newimg3()" onmouseout="oldimg3()" src="{% static 'images/men_d1.jpg' %}" class="card-img-top" alt="..." height="400px">
+            <div class="card-body">
+              <h5 class="card-title">Coat for men</h5>
+              <p class="card-text"><i>1499/-</i><span>Rs 999/-</span><br><b>50% offer</b></p>
+               <!-- <a href="{% url 'customer:cart' %}" class="btn btn-primary">add cart</a> --> 
             </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;">
-                <img id="img2" onmouseover="newimg1()" onmouseout="oldimg1()" src="{% static 'images/men_b1.jpg' %}" class="card-img-top" alt="..." height="400px">
-                <div class="card-body">
-                  <h5 class="card-title">Casual Shirt</h5>
-                  <p class="card-text"><i>999/-</i><span>Rs 799/-</span><br><b>30% offer</b></p>
-                  <a href="#" class="btn btn-primary">add cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4"><div class="card" style="width: 18rem;">
-              <img id="img3" onmouseover="newimg2()" onmouseout="oldimg2()" src="{% static 'images/men_c1.jpg' %}" class="card-img-top" alt="..." height="400px">
+          </div>
+        </div>
+          <div class="col-4">
+            <div class="card" style="width: 19rem;">
+              <img id="img5" onmouseover="newimg4()" onmouseout="oldimg4()" src="{% static 'images/men_f1.jpg' %}" class="card-img-top" alt="..." height="400px">
               <div class="card-body">
-                <h5 class="card-title">Fashion for Teen</h5>
-                <p class="card-text"><i>1199/-</i><span>Rs 899/-</span><br><b>30% offer</b></p>
-                <a href="#" class="btn btn-primary">add cart</a>
+                <h5 class="card-title">Ecru denim jacket</h5>
+                <p class="card-text"><i>1299/-</i><span>Rs 899/-</span><br><b>40% offer</b></p> 
+                <!-- <a href="{% url 'customer:cart' %}" class="btn btn-primary">add cart</a>  -->
               </div>
             </div>
         </div>
+        <div class="col-4">
+          <div class="card" style="width: 19rem;">
+            <img id="img6" onmouseover="newimg5()" onmouseout="oldimg5()" src="{% static 'images/men_g1.jpg' %}" class="card-img-top" alt="..." height="400px">
+            <div class="card-body">
+              <h5 class="card-title">Hoddies</h5>
+              <p class="card-text"><i>999/-</i><span>Rs 799/-</span><br><b>20% offer</b></p> 
+              <!-- <a href="{% url 'customer:cart' %}" class="btn btn-primary">add cart</a> --> 
+            </div>
+          </div>
         </div>
-        <div class="row" id="row3" style="margin-top: 50px; " >
+      </div>
+      <div class="row" id="row3" style="margin-top: 50px; " >
         <div class="col-3">
           <img src="{% static 'images/shirt1.jpg' %}" alt="" height="200px" width="200px">
         </div>
@@ -108,38 +117,31 @@
           <img src="{% static 'images/shirt2.jpg' %}" alt="" height="200px" width="200px">
         </div>
         </div>
-        <div class="row" id="row4" style="margin-top: 50px;">
-          <div class="col-4">
-            <div class="card" style="width: 18rem;">
-              <img id="img4" onmouseover="newimg3()" onmouseout="oldimg3()" src="{% static 'images/men_d1.jpg' %}" class="card-img-top" alt="..." height="400px">
-              <div class="card-body">
-                <h5 class="card-title">Coat for men</h5>
-                <p class="card-text"><i>1499/-</i><span>Rs 999/-</span><br><b>50% offer</b></p>
-                <a href="#" class="btn btn-primary">add cart</a>
-              </div>
-            </div>
-          </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;">
-                <img id="img5" onmouseover="newimg4()" onmouseout="oldimg4()" src="{% static 'images/men_f1.jpg' %}" class="card-img-top" alt="..." height="400px">
+        <div class="row" id="row2">
+          {% for pdt in pdt %}
+            <div class="col-4" style="margin-top: 20px;">
+             <div class="card" style="width: 19rem;">
+                <img id="img1"  src="{{pdt.image.url}}" class="card-img-top" alt="..." height="400px" width="100px">
                 <div class="card-body">
-                  <h5 class="card-title">Ecru denim jacket</h5>
-                  <p class="card-text"><i>1299/-</i><span>Rs 899/-</span><br><b>40% offer</b></p>
-                  <a href="#" class="btn btn-primary">add cart</a>
+                  <h5 class="card-title">{{pdt.name}}</h5>
+                  <p class="card-text"><i>1499/-</i><span>Rs {{pdt.price}}/-</span><br><b>20% offer</b></p>
+
+                  <form action="{% url 'customer:add_to_cart' pdt.id %}" method="post">
+                    {% csrf_token %}
+                  <button type="submit" class="btn btn-primary">add cart</button>
+                </form>
                 </div>
               </div>
-          </div>
-          <div class="col-4">
-            <div class="card" style="width: 18rem;">
-              <img id="img6" onmouseover="newimg5()" onmouseout="oldimg5()" src="{% static 'images/men_g1.jpg' %}" class="card-img-top" alt="..." height="400px">
-              <div class="card-body">
-                <h5 class="card-title">Hoddies</h5>
-                <p class="card-text"><i>999/-</i><span>Rs 799/-</span><br><b>20% offer</b></p>
-                <a href="#" class="btn btn-primary">add cart</a>
-              </div>
+             
             </div>
-          </div>
+            {% endfor %}
+          
+           
+            
         </div>
+        
+        
+        
     </div>
     <script>
       function newimg(){

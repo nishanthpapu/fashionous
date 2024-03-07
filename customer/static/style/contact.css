@@ -22,7 +22,7 @@ button{
     font-style: italic;
     
 }
-button:hover{
+#row1 button:hover{
     background-color: red;
     color: #fff;
     transform: scale(1.1) translate(5px);
@@ -32,23 +32,6 @@ button:hover{
 table th button a:hover{
     color: white;
 }
-
-/* select:hover{
-    background-color: red;
-    color: white;
-}
-select option{
-    background-color: white;
-    color: black;
-}
-button select{
-    color: black;
-    font-size: large;
-    font-weight: 500;
-    border: none;
-    background-color: #F0E68C;
-
-} */
 #row2{
     margin-top: 20px;
 }
@@ -67,17 +50,17 @@ textarea{
 #row2 .col-5{
     padding-left: 50px;
 }
-#btn{
+#row2 #btn{
     background-color: #d6b575;
 
 }
-#btn:hover{
+#row2 #btn:hover{
     background-color: red;
     color: white;
 
 }
 .col-7 img{
-    width: 300ppx;
+    width: 300px;
     height: 300px;
     padding-left: 40px;
     margin-top: 15px;
@@ -97,7 +80,6 @@ textarea{
     margin-left: 45px;
 }
 .col-7 #icon .fa-instagram{
-    /* width: 200px; */
     color:rgb(194, 9, 55);
 }
 .col-7 .fa-facebook{

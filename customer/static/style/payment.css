@@ -13,7 +13,7 @@ button{
 button:hover{
     opacity: 0.5;
 }
-img{
+.row img{
     width: 400px;
 }
 h2{

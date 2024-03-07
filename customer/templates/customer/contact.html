@@ -18,13 +18,20 @@
         #table1{
             margin-top: 30px;
             margin-left: -125px;
-
         }
         .butn:hover{
+          background-color:red;
+          color: white;
+          border-radius: 5px;
+        }
+        .butn:hover{
+            color: white;
+        }
+        .button:hover{
             background-color: red;
             color: white;
-            border-radius: 3px;
         }
+    
     </style>
 </head>
 <body>
@@ -39,7 +46,7 @@
                         
                         <th><button><a href="{% url 'customer:home' %}">HOME</a></button></th>
                         <th><div class="dropdown">
-                            <a style=" text-decoration: none; padding: 4px; color: black;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a style=" text-decoration: none; padding: 4px; color: black;" class="butn dropdown-toggle shopebutn button" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               SHOPE
                             </a>
                           

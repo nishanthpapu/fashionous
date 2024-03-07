@@ -27,12 +27,19 @@ th a {
     font-style: italic;
     font-weight:700;
 }
-button:hover{
-    /* background-color: red; */
+#row1 button:hover{
+    background-color: blue;
+    color: #fff;
+    transform: scale(1.1) translate(5px);
+    transition: .4s;
+    border-radius: 5px;
+}
+/* button:hover{
+    background-color: red;
     border-radius: 5px;
     transform: scale(1.1) translate(5px);
     transition: .4s;
-}
+} */
 
 
 

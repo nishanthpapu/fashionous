@@ -39,11 +39,6 @@
     transform: scale(1.2) translate(5px);
     transition: .4s
     }
-    .butn:hover{
-    background-color: red;
-    color: white;
-    border-radius: 3px;
-    }
     #table1 th{
         width: 150px;
     }
@@ -51,6 +46,17 @@
         color: rgb(91, 167, 16);
         font-style: italic;
     }
+    .dropdown a{
+        font-size: larger;
+    }
+    .butn:hover{
+          background-color: red;
+          color: white;
+          border-radius: 5px;
+        }
+        .butn a:hover{
+            color: white;
+        }
 
     </style>
 </head>
@@ -84,34 +90,34 @@
                   </table>
             </div>
         </div>
-        <div class="row" id="row2">
+        <div class="row" id="row4">
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img id="img1" onmouseover="newimg1()" onmouseout="oldimg1()" src="{% static 'images/woman-a1.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <img id="img4" onmouseover="newimg4()" onmouseout="oldimg4()" src="{% static 'images/woman4.jpg' %}" class="card-img-top" alt="..." height="400px">
                     <div class="card-body">
-                      <h5 class="card-title">Acne Studio coat</h5>
-                      <p class="card-text"><i>599/-</i><span>Rs 399/-</span><br><b>20% offer</b></p>
-                      <a href="#" class="btn btn-primary">add cart</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img id="img2" onmouseover="newimg2()" onmouseout="oldimg2()" src="{% static 'images/woman2.jpg' %}" class="card-img-top" alt="..." height="400px">
-                    <div class="card-body">
-                      <h5 class="card-title">Luxury Fashion</h5>
-                      <p class="card-text"><i>649/-</i><span>Rs 549/-</span><br><b>10% offer</b></p>
-                      <a href="#" class="btn btn-primary">add cart</a>
+                      <h5 class="card-title">Alex Perry fashion</h5>
+                      <p class="card-text"><i>849/-</i><span>Rs 749/-</span><br><b>15% offer</b></p>
+                      <!-- <a href="{% url 'customer:cart' %}" class="btn btn-primary">add cart</a> -->
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img id="img3" onmouseover="newimg3()" onmouseout="oldimg3()" src="{% static 'images/woman3.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <img id="img5" onmouseover="newimg5()" onmouseout="oldimg5()" src="{% static 'images/woman5.jpg' %}" class="card-img-top" alt="..." height="400px">
                     <div class="card-body">
-                      <h5 class="card-title">Fashion Landscape</h5>
-                      <p class="card-text"><i>444/-</i><span>Rs 333/-</span><br><b>10% offer</b></p>
-                      <a href="#" class="btn btn-primary">add cart</a>
+                      <h5 class="card-title">Staud Fashion</h5>
+                      <p class="card-text"><i>999/-</i><span>Rs 899/-</span><br><b>20% offer</b></p>
+                      <!-- <a href="{% url 'customer:cart' %}" class="btn btn-primary">add cart</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img id="img6" onmouseover="newimg6()" onmouseout="oldimg6()" src="{% static 'images/woman6.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <div class="card-body">
+                      <h5 class="card-title">Michael Kors</h5>
+                      <p class="card-text"><i>799/-</i><span>Rs 599/-</span><br><b>30% offer</b></p>
+                      <!-- <a href="{% url 'customer:cart' %}" class="btn btn-primary">add cart</a> -->
                     </div>
                 </div>
             </div>
@@ -133,38 +139,25 @@
                 <img src="{% static 'images/woman10.jpg' %}" alt="" height="200px" width="200px">
             </div>
         </div>
-        <div class="row" id="row4">
+        <div class="row" id="row2">
+            {% for pdt in pdt %}
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img id="img4" onmouseover="newimg4()" onmouseout="oldimg4()" src="{% static 'images/woman4.jpg' %}" class="card-img-top" alt="..." height="400px">
+                    <img id="img1" src="{{pdt.image.url}}" class="card-img-top" alt="..." height="400px">
                     <div class="card-body">
-                      <h5 class="card-title">Alex Perry fashion</h5>
-                      <p class="card-text"><i>849/-</i><span>Rs 749/-</span><br><b>15% offer</b></p>
-                      <a href="#" class="btn btn-primary">add cart</a>
+                      <h5 class="card-title">{{pdt.name}}</h5>
+                      <p class="card-text"><i>599/-</i><span>Rs {{pdt.price}}/-</span><br><b>20% offer</b></p>
+                      <form action="{url 'customer:add_to_cart' i.id}" method="post">
+                        {% csrf_token %}
+                      <button type="submit" class="btn btn-primary">add cart</button>
+                    </form>
                     </div>
-                </div>
+                  </div>
             </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img id="img5" onmouseover="newimg5()" onmouseout="oldimg5()" src="{% static 'images/woman5.jpg' %}" class="card-img-top" alt="..." height="400px">
-                    <div class="card-body">
-                      <h5 class="card-title">Staud Fashion</h5>
-                      <p class="card-text"><i>999/-</i><span>Rs 899/-</span><br><b>20% offer</b></p>
-                      <a href="#" class="btn btn-primary">add cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img id="img6" onmouseover="newimg6()" onmouseout="oldimg6()" src="{% static 'images/woman6.jpg' %}" class="card-img-top" alt="..." height="400px">
-                    <div class="card-body">
-                      <h5 class="card-title">Michael Kors</h5>
-                      <p class="card-text"><i>799/-</i><span>Rs 599/-</span><br><b>30% offer</b></p>
-                      <a href="#" class="btn btn-primary">add cart</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
+        
+        
     </div>
     <script>
         function newimg1(){

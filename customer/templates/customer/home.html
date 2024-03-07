@@ -56,8 +56,22 @@
                   
                        <td><button><a href="{% url 'customer:contact' %}">Contact us</a></button></td>
                        <td><button><a href="{% url 'customer:about' %}" >About</a></button></td>
-                       <td><button><a href="{% url 'customer:login' %}">Login</a></button></td>
-                       <!-- <td><i class="fa-solid fa-cart-shopping"></i></td>                       -->
+                       <!-- <td><button><a href="{% url 'customer:login' %}">Login</a></button></td> -->
+                       <!-- <td><button><a href="{% url 'customer:logout' %}">Logout</a></button></td> -->
+                       <td><div class="dropdown">
+                        <a style=" text-decoration: none; padding: 4px;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Login
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'customer:login' %}">Login</a></li>
+                          <li><a class="dropdown-item" href="{% url 'customer:logout' %}">Logout</a></li>
+                        
+                        </ul>
+                      </div></td>
+                      <td><button><a href="{% url 'seller:s_home' %}">Seller</a></button></td>
+
+                       <td><button><a href="{% url 'customer:cart' %}" style="text-decoration: none;">Cart</a></button></td>                      
                     </tr>
                 </table>
                 
