@@ -1,0 +1,45 @@
+#row1{
+height: 120px;
+}
+.col-4 img{
+    width: 300px;
+
+}    
+#table1 th{
+    width: 150px;
+    
+}
+#table1{
+    margin-left:40px;
+    margin-top: 40px;
+    border-radius: 20px;
+    /* border-bottom: 1px solid; */
+}
+th a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: 500;
+}
+#row1 button{
+    background-color:white;
+    border: none;
+    font-style: italic;
+    font-weight:700;
+}
+#row1 button:hover{
+    background-color: blue;
+    color: #fff;
+    transform: scale(1.1) translate(5px);
+    transition: .4s;
+    border-radius: 5px;
+}
+/* button:hover{
+    background-color: red;
+    border-radius: 5px;
+    transform: scale(1.1) translate(5px);
+    transition: .4s;
+} */
+
+
+

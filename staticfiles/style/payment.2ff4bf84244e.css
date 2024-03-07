@@ -1,0 +1,23 @@
+#owner{
+    width: 400px;
+}
+#cardnum{
+    width:400px;
+}
+button{
+    width: 400px;
+    font-style: italic;
+  font-weight: 500;
+  background-color: skyblue;
+}
+button:hover{
+    opacity: 0.5;
+}
+.row img{
+    width: 400px;
+}
+h2{
+    margin-top: 150px;
+    font-style: italic;
+    font-weight: 700;
+}
