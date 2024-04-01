@@ -86,10 +86,12 @@
                 </form>
             </div>
         </div>
+       
         <div class="row" id="row2">
             <div class="col-4"></div>
             <div class="col-4">
                 <form action="" method="post" enctype="multipart/form-data" >
+                
                     {% csrf_token %}
                     <table>
                         <tr>
@@ -135,31 +137,48 @@
                                 {% endfor %}
                             </select></th>
                         </tr>
-                        <tr><th><button type="submit" type="button" class="btn btn-primary" data-bs-toggle="#exampleModal">Update</button><br><p id="click"></p></th></tr>
+                        <tr>
+                            <th>
+                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button><br><p id="click"></p>
+                            </th>
+                        </tr>
+                    </table>
+                </form>
             </div>
-            <div class="col-4"></div>
+        
+            <div class="col-4">
+
+            </div>
         </div>
-    </div>
+   
     {% if messages %}
 {% for message in messages %}
-    <div class="modal" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                
-                
-                <div class="modal-header">
-                    <h6 class="modal-title" id="exampleModalLabel"> notification</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                
-                <div class="modal-body">
-                    <p style="color: green; font-weight: 600; font-size: larger;">{{ message }}</p>
-                </div>
-                <!-- <div class="modal-footer">
-                </div> -->
-            </div>
+
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">notification</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+            <p style="color: green; font-weight: 600; font-size: larger;">{{message}}</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+        </div>
+      </div>
     </div>
+  </div>
+  
+  <!-- Modal -->
+ 
+  
+
+</div>   
 {% endfor %}
 {% endif %}
 

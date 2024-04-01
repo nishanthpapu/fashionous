@@ -25,6 +25,18 @@
   width: 300px;
 
  }
+ #profile{
+            height: 35px;
+            width: 35px;
+            border-radius: 17px;
+            background-color: rosybrown;
+        }
+        #profile a{
+            text-align: center;
+            font-size: larger;
+            color: white;
+            padding-left: 10px;
+        }
 </style>
 </head>
 <body>
@@ -53,9 +65,20 @@
                           <li><a class="dropdown-item" href="{% url 'customer:woman' %}">Woman</a></li>
                         </ul>
                       </div></td>
+                      <td><div class="dropdown">
+                        <a style=" text-decoration: none; padding: 4px;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Contact us
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'customer:mobile' %}">Contact us</a></li>
+                          <li><a class="dropdown-item" href="{% url 'customer:about' %}">About</a></li>
+                        
+                        </ul>
+                      </div></td>
                   
-                       <td><button><a href="{% url 'customer:contact' %}">Contact us</a></button></td>
-                       <td><button><a href="{% url 'customer:about' %}" >About</a></button></td>
+                       <!-- <td><button><a href="{% url 'customer:mobile' %}">Contact us</a></button></td>
+                       <td><button><a href="{% url 'customer:about' %}" >About</a></button></td> -->
                        <!-- <td><button><a href="{% url 'customer:login' %}">Login</a></button></td> -->
                        <!-- <td><button><a href="{% url 'customer:logout' %}">Logout</a></button></td> -->
                        <td><div class="dropdown">
@@ -71,7 +94,8 @@
                       </div></td>
                       <td><button><a href="{% url 'seller:s_home' %}">Seller</a></button></td>
 
-                       <td><button><a href="{% url 'customer:cart' %}" style="text-decoration: none;">Cart</a></button></td>                      
+                       <td><button><a href="{% url 'customer:cart' %}" style="text-decoration: none;">Cart</a></button></td>
+                       <td><div id="profile" style="margin-top: -5px;"><a href="{% url 'customer:myaccount' %}"><i class="fa-regular fa-user"></i></a></div></td>                     
                     </tr>
                 </table>
                 

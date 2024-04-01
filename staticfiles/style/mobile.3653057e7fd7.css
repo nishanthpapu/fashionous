@@ -32,6 +32,40 @@ button{
 table th button a:hover{
     color: white;
 }
+.container{
+    background-color:#F0E68C ;
+    height: 750px;
+}
+#table td{
+    background-color: #F0E68C;
+    font-size: large;
+}
+#table1 th{
+    width: 150px;
+    
+}
+th a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    font-weight: 500;
+}
+button{
+    background-color:#F0E68C;
+    border: none;
+    font-style: italic;
+    
+}
+#row1 button:hover{
+    background-color: red;
+    color: #fff;
+    transform: scale(1.1) translate(5px);
+    transition: .4s;
+    border-radius: 5px;
+}
+table th button a:hover{
+    color: white;
+}
 #row2{
     margin-top: 20px;
 }
@@ -58,27 +92,7 @@ textarea{
     background-color: red;
     color: white;
 
-}
-.col-7 img{
-    width: 300px;
-    height: 300px;
-    padding-left: 40px;
-    margin-top: 15px;
-}
-.col-7 h2{
-    padding-left: 40px;
-    margin-top: 30px;
-    font-style: italic;
-}
-.col-7 td{
-    width: 100px;
-}
-.col-7 table td{
-    height: 80px;
-}
-.col-7 table{
-    margin-left: 45px;
-}
+ }
 .col-7 #icon .fa-instagram{
     color:rgb(194, 9, 55);
 }
@@ -88,3 +102,33 @@ textarea{
 .col-7 span{
     font-weight: 500;
 }
+.col-7 h2{
+    padding-left: 40px;
+    margin-top: 30px;
+    font-style: italic;
+}
+.col-7 table{
+    margin-left: 45px;
+}
+.col-7 table td{
+    height: 80px;
+}
+#row2 #img{
+    margin-left: 40px;
+}
+#table1{
+    margin-top: 30px;
+    margin-left: 120px;
+}
+.butn:hover{
+    background-color:red;
+    color: white;
+    border-radius: 5px;
+  }
+  .butn:hover{
+      color: white;
+  }
+  .button:hover{
+      background-color: red;
+      color: white;
+  }

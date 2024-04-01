@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'styles/s_register.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         #table{
     width: 600px;
@@ -18,14 +19,16 @@
 input{
     width: 250px;
 }
+
 #row2 label{
     font-weight: 500;
-    color: black;
+    color: white;
 }
 #row2 table  h1{
     padding-left: 50px;
     font-style: italic;
     font-weight: 500;
+    color: white;
 }
 #row2 table button{
     width: 250px;
@@ -41,13 +44,15 @@ input{
 }
 .container{
     height: 700px;
-    background-color:#D5DBDB ;
+    background-image: url('https://i.pinimg.com/236x/22/af/95/22af95b7ca4bcfa6f52f9370414f146b.jpg');
+    background-size: cover;
 }
-table a{
+/* table a{
     text-decoration: none;
-}
+} */
 p{
     color: red;
+    font-weight: 500;
 }
 #row1 table tr th{
     width: 200px;
@@ -57,26 +62,82 @@ p{
 }
 #row1 table button{
     border: none;
-    background-color: #D5DBDB;
+    background: none;
+    /* background-color: #D5DBDB; */
+    background-image: url('https://i.pinimg.com/236x/77/4e/06/774e06f680e3e557a04396253d443d84.jpg');
     font-style: oblique;
     font-weight: 700;
     margin-top: 30px;
 }
 #row1 table a{
     text-decoration: none;
-    color: black;
-}
-#row1 table button a:hover{
-    background-color: black;
-    border-radius: 3px;
-}
-#row1 table button a:hover{
     color: white;
+    background: none;
 }
+
 #row2 table span{
-    color:black;
+    color:red;
     font-size:larger ;
     font-weight: 600;
+}
+#row2 table{
+    margin-top: -30px;
+}
+#row2 #bgr{
+    background-color:white;
+    background-image: url('https://i.pinimg.com/236x/77/4e/06/774e06f680e3e557a04396253d443d84.jpg');
+    background-size: cover;
+}
+#row2 form{
+    margin-left: 100px;
+}
+i{
+    color: white;
+}
+.modals{
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    height: 150px;
+    width: 350px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    /* border: 3px solid green; */
+}
+.modals p{
+    color: green;
+    font-size: x-large;
+    font-weight: 600;
+    font-style: italic;
+padding: 40px 0px 0px 50px ;
+    
+}
+.modals  #btn{
+    float: right;
+    background-color: white;
+    border: none;
+}
+.modals #btn a i{
+    color: black;
+    font-size: xx-large;
+}
+.modals button{
+    float: right;
+}
+.modals #btn1{
+    margin-top: 20px;
+    margin-right: 10px;
+    font-style: italic;
+    font-weight: 500;
+    height: 35px;
+}
+.modals i:hover{
+    opacity: 0.5;
+}
+#btn1 a{
+    color: white;
+    text-decoration: none;
 }
     </style>
 
@@ -85,7 +146,7 @@ p{
     <div class="container">
         <div class="row" id="row1">
             <div class="col-3">
-                <img src="{% static 'images/fashionous_logo.jpg' %}" alt="" style="width: 200px; mix-blend-mode: darken;">
+                <img src="{% static 'images/fashionous_logo.jpg' %}" alt="" style="width: 200px; mix-blend-mode:multiply;">
             </div>
             <div class="col-9">
                 <form action="" method="post">
@@ -102,16 +163,17 @@ p{
             </div>
         </div>
         <div class="row" id="row2">
-            <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col-3"></div>
+            <div class="col-5">
+                <div id="bgr">
                 <form action="" method="post" onsubmit="return register()">
                     {% csrf_token %}
                 <table id="table">
                     <tr>
-                        <th><h1>Register</h1></th><br>
+                        <th><h1>Register</h1></th><br><br>
                     </tr>
                     <tr>
-                        <td><label for="">First name <span>*</span></label></td><br>
+                        <td><label for="">First name <span>*</span></label></td>
                     </tr>
                     <tr>
                         <td><input type="text" name="firstname" placeholder="firstname" id="user"><br><p id="para1"></p></td>
@@ -139,21 +201,32 @@ p{
                         <td><input type="password" placeholder="Confirm Password" id="repeat"><p id="para4"></p></td>
                     </tr>
                     <tr>
-                        <td><button type="submit" onsubmit="register()">Register</button><br><p id="regi" style=" color: green; font-weight: 600; font-style: italic;"></p></td>
+                        <td><button style="border-radius: 0px;height: 32px; border: none;" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button><br><p id="regi" style=" color: green; font-weight: 600; font-style: italic;">{{ message }}</p></td>
                     </tr>
                     <tr>
-                        <td>Already have an account? <a href="{% url 'seller:s_login' %}">Login</a></td>
+                        <td><i>Already have an account? </i><a href="{% url 'seller:s_login' %}">Login</a></td>
                     </tr>
 
                 </table>
             </form>
             </div>
+            </div>
             <div class="col-4"></div>
         </div>
-
     </div>
+{% if messages %}
+  <div class="modals">
+   <button id="btn" ><a href="{% url 'seller:s_register' %}"><i class="fa-solid fa-xmark"></i></a></button>
+   {% for i in messages %}
+    <p>{{i}}</p>
+    {% endfor %}
+    <button id="btn1" class="btn  btn-primary"><a href="{% url 'seller:s_login' %}">Login here</a></button>
+    
+  </div>
+{% endif %}
+     
     <script>
-        function  register(){
+        function register(){
             user=document.getElementById('user').value
             lastname=document.getElementById('lastname').value
             email=document.getElementById('email').value
@@ -186,15 +259,11 @@ p{
                 
             }return true
         }
-        function register(){
-            document.getElementById('regi').innerHTML="Registered Successfully!"
-
-        }
         
 
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></script>
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     
 </body>

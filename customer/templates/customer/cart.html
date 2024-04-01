@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'style/cart.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">
     <style>
         #row3 td button{
     align-items: center;
@@ -18,9 +19,21 @@
     border-radius: 3px;
    margin-right: -600px;
 }
-#row3 button:hover{
+    #row3 button:hover{
     opacity: 0.5;
 }
+    #profile{
+            height: 35px;
+            width: 35px;
+            border-radius: 17px;
+            background-color: #04C8C8;
+        }
+        #profile a{
+            text-align: center;
+            font-size: larger;
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -45,9 +58,10 @@
                               <li><a class="dropdown-item" href="{% url 'customer:woman' %}">WOMAN</a></li>
                             </ul>
                           </div></th>
-                        <th><button><a href="{% url 'customer:contact' %}">CONTACT</a></button></th>
+                        <th><button><a href="{% url 'customer:mobile' %}">CONTACT</a></button></th>
                         <th><button><a href="{% url 'customer:about' %}">ABOUT</a></button></th>
                         <th><button><a href="{% url 'customer:login' %}">LOGIN</a></button></th>
+                        <th><div id="profile"><a href="{% url 'customer:myaccount' %}">{{cust}}</a></div></th>
                     </tr>
                 </table>
             </div>
@@ -57,17 +71,19 @@
                 <table>
                     <tr>
                         <th>Cart</th>
-                        <th>product Name</th>
+                        <th>Product Name</th>
                         <th>Quantity</th>
                         <th>Price</th>
-                        <th>remove</th>
+                        <th>Remove</th>
                     </tr>
                     {% for item in cart_items %}
                     <tr>
-                        <td><img src="{{item.product.image.url}}" alt="" height="200px"></td>
+                        <td><img src="{{item.product.image.url}}" alt="" height="200px" width="150px"></td>
                         <td>{{item.product.name}}</td>
                         <td id="">{{item.quantity}}</td>
-                        <td ><p id="total"></p></td>
+                        <td id="total">{{item.product.price}}</td>
+
+                        
                         <div style="display: none;">
                             <input type="number" name="" id="quantity" value="{{item.quantity}}">
                             <input type="number" name="" id="price" value="{{item.product.price}}">
@@ -101,12 +117,10 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-function total_per_item(){
-    quantity=document.getElementById('quantity').value 
-    price=document.getElementById('price').value 
-    total=quantity*price
-    document.getElementById('total').innerHTML=total
-}
+
+
+
+
 
 </script>
 

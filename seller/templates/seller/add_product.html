@@ -72,6 +72,19 @@
         #row2 button:hover{
             opacity: 0.6;
         }
+        #profile{
+            height: 35px;
+            width: 35px;
+            border-radius: 17px;
+            background-color: black;
+        }
+        #profile a{
+            text-align: center;
+            font-size: larger;
+            color: white;
+            text-decoration: none;
+            padding-left: 12px;
+        }
 
     </style>
 </head>
@@ -89,7 +102,8 @@
                             <th><button><a href="{% url 'seller:add_product' %}">ADD PRODUCT</a></button></th>
                             <th><button><a href="{% url 'seller:view_product' %}">VIEW PRODUCT</a></button></th>
                             <!-- <th><button><a href="{% url 'seller:update_product' %}">UPDATE PRODUCT</a></button></th> -->
-                            <th><button><a href="{% url 'seller:s_login' %}">LOGIN</a></button></th>
+                            <th><button style="margin-left: 20px;"><a href="{% url 'seller:s_login' %}">LOGIN</a></button></th>
+                            <th><div id="profile"><a href="{% url 'seller:s_myaccount' %}">{{sell}}</a></div></th>
                         </tr>
                     </table>
                 </form>

@@ -10,5 +10,6 @@ urlpatterns =[
     path('view_product/',views.view_product,name='view_product'),
     path('update_product/',views.update_product,name='update_product'),
     path('remove/<int:pid>',views.remove,name='remove'),
-    path('update/<int:pid>',views.update_product,name='update_product')
+    path('update/<int:pid>',views.update_product,name='update_product'),
+    path('s_myaccount/',views.s_myaccount,name='s_myaccount')
 ]

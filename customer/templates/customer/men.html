@@ -39,6 +39,18 @@
           color: white;
           font-style: italic;
         }
+        #profile{
+            height: 35px;
+            width: 35px;
+            border-radius: 17px;
+            background-color: #04C8C8;
+        }
+        #profile a{
+            text-align: center;
+            font-size: larger;
+            color: white;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -62,9 +74,10 @@
                       <li><a class="dropdown-item" href="{% url 'customer:woman' %}">Woman</a></li>
                     </ul>
                   </div></th>
-                  <th><button><a href="{% url 'customer:contact' %}">CONTACT</a></button></th>
+                  <th><button><a href="{% url 'customer:mobile' %}">CONTACT</a></button></th>
                   <th><button><a href="{% url 'customer:about' %}">ABOUT</a></button></th>
-                  <th><button><a href="{% url 'customer:login' %}">LOGIN</a></button></th>
+                  <th><button><a href="{% url 'customer:logout' %}">LOGOUT</a></button></th>
+                  <th><div id="profile"><a href="{% url 'customer:myaccount' %}">{{cust}}</a></div></th>
               </tr>
           </table>
             </table>

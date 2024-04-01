@@ -37,6 +37,9 @@
     #row3 h5{
         font-weight: 700;
     }
+    #row3{
+        margin-top: 50px;
+    }
     </style>
 </head>
 <body>
@@ -60,7 +63,7 @@
                               <li><a class="dropdown-item" href="{% url 'customer:woman' %}">WOMAN</a></li>
                             </ul>
                           </div></th>
-                        <th><button><a href="{% url 'customer:contact' %}">CONTACT</a></button></th>
+                        <th><button><a href="{% url 'customer:mobile' %}">CONTACT</a></button></th>
                         <th><button><a href="{% url 'customer:about' %}">ABOUT</a></button></th>
                         <th><button><a href="{% url 'customer:login' %}">LOGIN</a></button></th>
                     </tr>
@@ -84,13 +87,13 @@
         </div>
         <div class="row" id="row3">
             <div class="col-5">
-                <img src="{% static 'images/about3.jpg' %}" alt="" height="500px">
+                <img src="{% static 'images/about3.jpg' %}" alt="" height="500px" width="400px">
             </div>
             <div class="col-7">
-                <h5>Introduction</h5>
-                <p style="font-size: large;text-indent: 0px;"><span>FASHIONOUS</span> is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.
+                <h5>Introduction:</h5>
+                <p style="font-size: large;text-indent: 0px;"><span>FASHIONOUS</span> is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, fashionous aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal.
                      The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country</p>
-                <h5>Recognitions</h5>
+                <h5>Recognitions:</h5>
                 <ul>
                     <li>Awarded 'Fashion eRetailer of the Year 2013' by Franchise India – Indian eRetail Awards</li>
                     <li> Awarded 'Best E-commerce Website for 2012' by IAMAI – India Digital Awards</li>

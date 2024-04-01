@@ -7,25 +7,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'style/register.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        .container{
-    background-color: #D6DBDF;
-    height: 650px;
+.container{
+/* background-color: #D6DBDF; */
+ height: 650px;
+ background-image: url('https://i.pinimg.com/236x/77/4e/06/774e06f680e3e557a04396253d443d84.jpg');
     
-    /* background-color: #EAECEE; */
+/* background-color: #EAECEE; */
 }
 #table1 th{
     width: 300px;
 }
 #row1 button{
     border: none;
-    background-color: #D6DBDF;
     font-weight: 700;
     font-style: italic;
+    background: none;
+
 }
 button a{
     text-decoration: none;
-    color: black;
+    color:white;
 }
 #row1 table{
     margin-top: 30px;
@@ -34,34 +37,36 @@ button a{
     width: 250px;
     mix-blend-mode: darken;
 }
-#row1 table button:hover{
+/* #row1 table button:hover{
     transform: scale(1.1) translate(5px);
     transition: .4s;
     background-color: red;
     border-radius: 5px;
-    color: white;
-}
-.butn:hover{
-    background-color: red;
-    color: white;
-    border-radius: 5px;
-    transform: scale(1.1) translate(5px);
-    transition: .4s;
-}
+    color: white; */
+/* } */
+/* .butn:hover{ */
+    /* background-color: red; */
+    /* color: white; */
+    /* border-radius: 5px; */
+    /* transform: scale(1.1) translate(5px);
+    transition: .4s; */
+/* } */
 #row2 button{
     width: 220px;
-    background-color: rgb(219, 19, 19);
+    background-color: #a020f0;
+    background-image: url();
     color: white;
     font-style: italic;
     font-weight: 700;
-    
+    border: none;
 }
 #row2 button:hover{
-    background-color: rgb(13, 80, 13);
+    background-color: rgb(204, 24, 24);
 }
 input{
     width: 220px;
     margin-bottom: 0px;
+    color: white;
 }
 h1{
     margin-top: 5px;
@@ -69,7 +74,77 @@ h1{
 p,span{
     color: red;
 }
-
+#bg{
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    background-image: url('https://i.pinimg.com/236x/53/6c/63/536c6323d439596e766f055498e775e4.jpg');
+}
+#row2 form{
+    margin-left: 130px;
+}
+#row2 h1{
+    margin-left: 130px;
+    color: white;
+}
+#row2 table th label{
+    color: white;
+}
+#row2 table th input{
+    background-image: url('https://i.pinimg.com/236x/58/fd/63/58fd6372804894aaf0a381ed9b80fcd2.jpg');
+}
+i{
+    color: white;
+}
+.modals{
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    height: 150px;
+    width: 350px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    /* border: 3px solid green; */
+}
+.modals p{
+    color: green;
+    font-size: x-large;
+    font-weight: 600;
+    font-style: italic;
+padding: 40px 0px 0px 50px ;
+    
+}
+.modals  #btn{
+    float: right;
+    background-color: white;
+    border: none;
+}
+.modals #btn a i{
+    color: black;
+    font-size: xx-large;
+}
+.modals button{
+    float: right;
+}
+.modals #btn1{
+    margin-top: 20px;
+    margin-right: 10px;
+    font-style: italic;
+    font-weight: 500;
+    height: 35px;
+}
+.modals i:hover{
+    opacity: 0.5;
+}
+/* .modals a{
+    font-weight: 500;
+    font-style: italic;
+    float: right;
+   border: 2px solid;
+   background-color: blue;
+   color: white;
+} */
     </style>
 </head>
 <body>
@@ -83,7 +158,7 @@ p,span{
                     <tr>
                         <th><button><a href="{% url 'customer:home' %}">HOME</a></button></th>
                         <th><div class="dropdown">
-                            <a style=" text-decoration: none; padding: 4px; color: black;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a style=" text-decoration: none; padding: 4px; color: white;" class="butn dropdown-toggle shopebutn" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               SHOPE
                             </a>
                           
@@ -92,7 +167,7 @@ p,span{
                               <li><a class="dropdown-item" href="{% url 'customer:woman' %}">WOMAN</a></li>
                             </ul>
                           </div></th>
-                        <th><button><a href="{% url 'customer:contact' %}">CONTACT</a></button></th>
+                        <th><button><a href="{% url 'customer:mobile' %}">CONTACT</a></button></th>
                         <th><button><a href="{% url 'customer:about' %}">ABOUT</a></button></th>
                         <th><button><a href="{% url 'customer:login' %}">LOGIN</a></button></th>
                     </tr>
@@ -100,10 +175,12 @@ p,span{
             </div>
         </div>
         <div class="row" id="row2">
-            <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col-3"></div>
+            
+            <div class="col-5">
+                <div id="bg">
                 <h1>Register</h1>
-                <form action="" method="post" onsubmit="return register()">
+                <form action="" method="post" onsubmit="return regist()">
                     {% csrf_token %}
                 <table>
                     <tr>
@@ -145,17 +222,41 @@ p,span{
                   
                      
                 </table>
-                <th><button type="submit">Register</button></th><br>
-                <th>Already have an account?<a href="{% url 'customer:login' %}">Login</a></th>
+                <th><button style="border-radius: 0px;height: 32px;" type="submit" class="btn btn-primary">Register</button></th><br>
+                <th><i>Already have an account?</i><a href="{% url 'customer:login' %}" style="text-decoration: none;">Login</a></th>
             </form>
                   
+            </div>
             </div>
             <div class="col-4"></div>
         </div>
     </div>
+    
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  
+{% if messages %}
+  <div class="modals">
+   <button id="btn" ><a href="{% url 'customer:register' %}"><i class="fa-solid fa-circle-xmark"></i></a></button>
+   {% for i in messages %}
+    <p>{{i}}</p>
+    {% endfor %}
+    <button id="btn1" class="btn  btn-primary"><a href="{% url 'customer:login' %}">Login here</a></button>
+    
+  </div>
+{% endif %}
+     
+          
+ 
+  
+
+  
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function register(){
+        function regist(){
             name=document.getElementById('firstname').value 
             lastname=document.getElementById('lastname').value
             email1=document.getElementById('email').value
@@ -183,6 +284,9 @@ p,span{
                 return true
             }
         }
+        // function regi(){
+        //     document.getElementById('regi').innerHTML='Registered Successfully!'
+        // }
     </script>
 </body>
 </html>
